@@ -5,7 +5,7 @@ export function AppLayout() {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className="pt-[80px]">
         <Outlet />
       </main>
     </div>
