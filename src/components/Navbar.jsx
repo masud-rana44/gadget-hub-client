@@ -24,7 +24,7 @@ export const Navbar = () => {
   const { pathname } = location;
 
   return (
-    <nav className="fixed w-full h-[80px] bg-zinc-500 text-white px-5 flex items-center">
+    <nav className="fixed w-full h-[80px] bg-zinc-500 text-white px-5 flex items-center z-50">
       <div className="container mx-auto flex items-center justify-between ">
         <Link to="/">LOGO</Link>
         <ul className="flex items-center justify-between space-x-12">
