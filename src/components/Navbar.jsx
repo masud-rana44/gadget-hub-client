@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const links = [
   {
@@ -21,6 +22,8 @@ const links = [
 
 export const Navbar = () => {
   const location = useLocation();
+  const { user } = useAuth();
+
   const { pathname } = location;
 
   return (
@@ -40,6 +43,7 @@ export const Navbar = () => {
               </Link>
             </li>
           ))}
+          <li>{user && user.displayName}</li>
         </ul>
       </div>
     </nav>

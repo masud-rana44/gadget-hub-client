@@ -6,12 +6,15 @@ import router from "./Router/Router";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { BrandProvider } from "./contexts/BrandContext";
+import { AuthProvider } from "./contexts/AuthContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrandProvider>
-      <Toaster />
-      <RouterProvider router={router} />
-    </BrandProvider>
+    <AuthProvider>
+      <BrandProvider>
+        <Toaster />
+        <RouterProvider router={router} />
+      </BrandProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
