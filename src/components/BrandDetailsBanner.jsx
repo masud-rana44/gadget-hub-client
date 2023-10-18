@@ -13,7 +13,7 @@ export const BrandDetailsBanner = ({ advertisements }) => {
       // onSlideChange={() => console.log("slide change")}
       // onSwiper={(swiper) => console.log(swiper)}
     >
-      {advertisements.map((adv, idx) => (
+      {advertisements?.map((adv, idx) => (
         <SwiperSlide key={idx}>
           <div className="relative">
             <img src={adv.imageUrl} className="w-full" />

@@ -9,6 +9,7 @@ import MyCart from "../pages/MyCart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import BrandDetails from "../pages/BrandDetails";
+import ProductDetails from "../pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: async () => await axios.get("http://localhost:8080/api/brands"),
       },
       {
         path: "/products/new",
@@ -30,10 +30,20 @@ const router = createBrowserRouter([
         element: <MyCart />,
       },
       {
-        path: "/brands/:id",
+        path: "/brands/:brandName",
         element: <BrandDetails />,
         loader: async ({ params }) =>
-          await axios.get(`http://localhost:8080/api/brands/${params.id}`),
+          await axios.get(
+            `http://localhost:8080/api/brands/${params.brandName}/products`
+          ),
+      },
+      {
+        path: "/brands/:brandName/products/:productId",
+        element: <ProductDetails />,
+        loader: async ({ params }) =>
+          await axios.get(
+            `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
+          ),
       },
       {
         path: "/login",

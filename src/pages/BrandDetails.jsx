@@ -1,17 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { BrandDetailsBanner } from "../components/BrandDetailsBanner";
 import { ProductCards } from "../components/ProductCards";
+import { useBrand } from "../contexts/BrandContext";
 
 const BrandDetails = () => {
+  const { brands } = useBrand();
   const { data } = useLoaderData();
+  const products = data?.data || [];
 
-  const brand = data.data;
-
-  console.log(brand);
   return (
     <div>
-      <BrandDetailsBanner advertisements={brand.advertishments} />
-      <ProductCards products={brand.products} />
+      <BrandDetailsBanner advertisements={brands.advertishments} />
+      <ProductCards products={products} />
     </div>
   );
 };

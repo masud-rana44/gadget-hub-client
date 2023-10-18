@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const ProductCards = ({ products }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-      {products.map((product, idx) => (
-        <div key={idx}>
+      {products.map((product) => (
+        <div key={product._id}>
           <div>
             <img
-              src="https://media.istockphoto.com/id/1169842299/photo/huawei-p30-lite.jpg?s=612x612&w=0&k=20&c=unTytpRBARy4uunFaiVL7oRCfPuIWPpat5xCed5jPJ8="
-              alt=""
+              className="h-[200px]"
+              src={product.image}
+              alt={`Image of ${product.name}`}
             />
           </div>
           {product.name}
@@ -16,6 +18,14 @@ export const ProductCards = ({ products }) => {
           {product.type}
           {product.price}
           {product.rating}
+          <div className="flex items-center justify-between">
+            <button>Update</button>
+            <button>
+              <Link to={`/brands/${product.brandName}/products/${product._id}`}>
+                Details
+              </Link>
+            </button>
+          </div>
         </div>
       ))}
     </div>
@@ -24,4 +34,5 @@ export const ProductCards = ({ products }) => {
 
 ProductCards.propTypes = {
   products: PropTypes.array,
+  brandId: PropTypes.string,
 };

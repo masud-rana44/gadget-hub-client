@@ -3,13 +3,12 @@
 //   myProp: PropTypes.bool
 // };
 
-import { useLoaderData } from "react-router-dom";
 import { Banner } from "../components/Banner";
 import { Brands } from "../components/Brands";
+import { useBrand } from "../contexts/BrandContext";
 
 const Home = () => {
-  const { data } = useLoaderData();
-  const brands = data.data;
+  const { brands } = useBrand();
 
   return (
     <div className=" font-bold text-indigo-950 text-4xl">
