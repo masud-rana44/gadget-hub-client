@@ -19,7 +19,13 @@ export const ProductCards = ({ products }) => {
           {product.price}
           {product.rating}
           <div className="flex items-center justify-between">
-            <button>Update</button>
+            <button>
+              <Link
+                to={`/brands/${product.brandName}/products/${product._id}/update`}
+              >
+                Update
+              </Link>
+            </button>
             <button>
               <Link to={`/brands/${product.brandName}/products/${product._id}`}>
                 Details

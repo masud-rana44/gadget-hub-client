@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import BrandDetails from "../pages/BrandDetails";
 import ProductDetails from "../pages/ProductDetails";
+import ProductUpdate from "../pages/ProductUpdate";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: "/brands/:brandName/products/:productId",
         element: <ProductDetails />,
+        loader: async ({ params }) =>
+          await axios.get(
+            `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
+          ),
+      },
+       {
+        path: "/brands/:brandName/products/:productId/update",
+        element: <ProductUpdate />,
         loader: async ({ params }) =>
           await axios.get(
             `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
