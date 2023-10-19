@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
           ),
       },
-       {
+      {
         path: "/brands/:brandName/products/:productId/update",
         element: <ProductUpdate />,
         loader: async ({ params }) =>

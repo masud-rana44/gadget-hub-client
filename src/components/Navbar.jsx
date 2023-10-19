@@ -1,5 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { FiLogOut } from "react-icons/fi";
+import { User } from "./User";
+import { Button } from "./ui/Button";
 
 const links = [
   {
@@ -14,15 +17,11 @@ const links = [
     label: "My Cart",
     href: "/cart",
   },
-  {
-    label: "Login",
-    href: "/login",
-  },
 ];
 
 export const Navbar = () => {
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
 
   const { pathname } = location;
 
@@ -43,7 +42,25 @@ export const Navbar = () => {
               </Link>
             </li>
           ))}
-          <li>{user && user.displayName}</li>
+          <li>
+            {" "}
+            {user ? (
+              <div className="flex items-center gap-x-2">
+                <User />
+                <FiLogOut
+                  size={22}
+                  onClick={logOut}
+                  className="text-white font-medium cursor-pointer hover:opacity-80"
+                />
+              </div>
+            ) : (
+              <div>
+                <Button className="bg-gradient-to-r from-[#66b8dd] via-[#8e7fe9] to-[#e17497]">
+                  <Link to="/login">Login</Link>
+                </Button>
+              </div>
+            )}
+          </li>
         </ul>
       </div>
     </nav>
