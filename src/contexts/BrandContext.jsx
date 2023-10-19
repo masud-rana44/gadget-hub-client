@@ -23,7 +23,7 @@ const BrandProvider = ({ children }) => {
 const useBrand = () => {
   const context = useContext(brandContext);
   if (!context)
-    throw new Error("Brand context is accessed outside of brand provider");
+    throw new Error("BrandContext was used outside of BrandProvider");
   return context;
 };
 

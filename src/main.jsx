@@ -7,14 +7,17 @@ import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { BrandProvider } from "./contexts/BrandContext";
 import { AuthProvider } from "./contexts/AuthContext";
+import { DarkModeProvider } from "./contexts/DarkModeContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <BrandProvider>
-        <Toaster />
-        <RouterProvider router={router} />
-      </BrandProvider>
-    </AuthProvider>
+    <DarkModeProvider>
+      <AuthProvider>
+        <BrandProvider>
+          <Toaster />
+          <RouterProvider router={router} />
+        </BrandProvider>
+      </AuthProvider>
+    </DarkModeProvider>
   </React.StrictMode>
 );

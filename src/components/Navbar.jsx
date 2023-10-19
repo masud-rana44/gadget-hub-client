@@ -3,6 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { FiLogOut } from "react-icons/fi";
 import { User } from "./User";
 import { Button } from "./ui/Button";
+import { DarkModeToggle } from "./DarkModeToggle";
 
 const links = [
   {
@@ -26,7 +27,7 @@ export const Navbar = () => {
   const { pathname } = location;
 
   return (
-    <nav className="fixed w-full h-[80px] bg-zinc-500 text-white px-5 flex items-center z-50">
+    <nav className="fixed w-full h-[80px] bg-zinc-500 dark:bg-black text-white px-5 flex items-center z-50">
       <div className="container mx-auto flex items-center justify-between ">
         <Link to="/">LOGO</Link>
         <ul className="flex items-center justify-between space-x-12">
@@ -42,6 +43,9 @@ export const Navbar = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <DarkModeToggle />
+          </li>
           <li>
             {" "}
             {user ? (
