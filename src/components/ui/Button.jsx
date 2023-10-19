@@ -5,7 +5,16 @@ export const Button = ({ children, size, ...rest }) => {
     <button
       className={`${
         size === "sm" ? "py-[6px] px-3" : "px-6 py-[10px]"
-      } bg-indigo-700 hover:bg-indigo-800 transition text-white w-full font-medium rounded-md`}
+      } bg-indigo-700 w-auto 
+        rounded-md 
+        border
+        border-transparent
+        disabled:cursor-not-allowed 
+        disabled:opacity-50
+        text-white
+        font-semibold
+        hover:opacity-75
+        transition`}
       {...rest}
     >
       {children}

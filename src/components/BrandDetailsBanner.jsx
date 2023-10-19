@@ -15,12 +15,12 @@ export const BrandDetailsBanner = ({ advertisements }) => {
     >
       {advertisements?.map((adv, idx) => (
         <SwiperSlide key={idx}>
-          <div className="relative">
-            <img src={adv.imageUrl} className="w-full" />
+          <div className="relative w-full h-[calc(h-screen-80px)]">
+            <img src={adv.imageUrl} className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/20 z-10" />
-            <div className="text-white z-30 absolute bottom-5 ">
-              <h3>{adv.title}</h3>
-              <p>{adv.description}</p>
+            <div className="text-white text-center z-30 absolute top-[30%] left-1/2 transform -translate-x-1/2 translate-y-1/2 space-y-2">
+              <h3 className="text-5xl font-extrabold">{adv.title}</h3>
+              <p className="font-medium">{adv.description}</p>
             </div>
           </div>
         </SwiperSlide>
