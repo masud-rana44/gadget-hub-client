@@ -11,6 +11,7 @@ import Register from "../pages/Register";
 import BrandDetails from "../pages/BrandDetails";
 import ProductDetails from "../pages/ProductDetails";
 import ProductUpdate from "../pages/ProductUpdate";
+import { PrivateRoutes } from "../components/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <MyCart />,
+        element: (
+          <PrivateRoutes>
+            <MyCart />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/brands/:brandName",
@@ -39,19 +44,27 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/brands/:brandName/products/:productId",
-        element: <ProductDetails />,
+        path: "/:brandName/products/:productId",
+        element: (
+          <PrivateRoutes>
+            <ProductDetails />
+          </PrivateRoutes>
+        ),
         loader: async ({ params }) =>
           await axios.get(
-            `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
+            `http://localhost:8080/api/products/${params.productId}`
           ),
       },
       {
-        path: "/brands/:brandName/products/:productId/update",
-        element: <ProductUpdate />,
+        path: "/:brandName/products/:productId/update",
+        element: (
+          <PrivateRoutes>
+            <ProductUpdate />
+          </PrivateRoutes>
+        ),
         loader: async ({ params }) =>
           await axios.get(
-            `http://localhost:8080/api/brands/${params.brandName}/products/${params.productId}`
+            `http://localhost:8080/api/products/${params.productId}`
           ),
       },
       {

@@ -6,17 +6,19 @@ const brandContext = createContext();
 
 const BrandProvider = ({ children }) => {
   const [brands, setBrands] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchBrands = async () => {
       const { data } = await axios.get("http://localhost:8080/api/brands");
       setBrands(data.data);
+      setIsLoading(false)
     };
 
     fetchBrands();
   }, []);
   return (
-    <brandContext.Provider value={{ brands }}>{children}</brandContext.Provider>
+    <brandContext.Provider value={{ brands, isLoading }}>{children}</brandContext.Provider>
   );
 };
 

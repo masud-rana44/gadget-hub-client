@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const Button = ({ children, size, ...rest }) => {
+export const Button = ({ children, className, size, ...rest }) => {
   return (
     <button
       className={`${
@@ -14,7 +14,7 @@ export const Button = ({ children, size, ...rest }) => {
         text-white
         font-semibold
         hover:opacity-75
-        transition`}
+        transition ${className}`}
       {...rest}
     >
       {children}
@@ -26,4 +26,5 @@ Button.propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   rest: PropTypes.any,
+  className: PropTypes.string,
 };

@@ -1,9 +1,7 @@
-const EmptyState = () => {
+export const EmptyState = () => {
   return (
-    <div className="flex items-center justify-center h-full w-full text-neutral-500">
-      No results found.
+    <div className="flex text-base md:text-xl items-center justify-center h-full w-full text-neutral-400 dark:text-gray-400 text-center">
+      No products found.
     </div>
   );
 };
-
-export default EmptyState;

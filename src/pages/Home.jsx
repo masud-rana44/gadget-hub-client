@@ -5,15 +5,18 @@
 
 import { Banner } from "../components/Banner";
 import { Brands } from "../components/Brands";
+import Testimonials from "../components/Testimonials";
+import { Loader } from "../components/Loader";
 import { useBrand } from "../contexts/BrandContext";
 
 const Home = () => {
-  const { brands } = useBrand();
+  const { brands, isLoading } = useBrand();
 
   return (
     <div className=" font-bold text-indigo-950 text-4xl">
       <Banner />
-      <Brands brands={brands} />
+      {isLoading ? <Loader /> : <Brands brands={brands} />}
+      <Testimonials />
     </div>
   );
 };
