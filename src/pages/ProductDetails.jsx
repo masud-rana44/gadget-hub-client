@@ -17,10 +17,13 @@ const ProductDetails = () => {
 
   const onClick = async () => {
     try {
-      await axios.post("https://brand-shop-server-one.vercel.app/api/carts", {
-        userId: user.uid,
-        productId: product._id,
-      });
+      await axios.post(
+        "https://brand-shop-server-masud-rana44.vercel.app/api/carts",
+        {
+          userId: user.uid,
+          productId: product._id,
+        }
+      );
 
       toast.success("Product added to the cart");
     } catch (error) {
@@ -47,16 +50,20 @@ const ProductDetails = () => {
         <div className="-ml-2">
           <FormatPrice price={product.price} />
         </div>
-        <p>{product.rating}/5</p>
-        <div className="font-xl font-medium ">
-          <p>
-            <span>Category: </span>
-            <span className="font-normal">{product.type}</span>
-          </p>
-          <p>
-            <span>Brand Name: </span>
-            <span className="font-normal">{product.brandName}</span>
-          </p>
+        <div className="w-full mt-4 flex flex-col space-y-1">
+          <div className="flex space-x-2 items-center">
+            {" "}
+            <p className="font-medium">Category:</p>
+            <p className="text-sm ">{product.type}</p>
+          </div>
+          <div className="flex space-x-2 items-center">
+            <p className="font-medium">Brand:</p>
+            <p className="text-sm ">{product.brandName}</p>
+          </div>
+          <div className="flex space-x-2 items-center">
+            <p className="font-medium">Rating:</p>
+            <p className="text-sm ">{product.rating}</p>
+          </div>
         </div>
         <div>
           <Button

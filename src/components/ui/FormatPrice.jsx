@@ -12,5 +12,5 @@ export const FormatPrice = ({ price }) => {
 };
 
 FormatPrice.propTypes = {
-  price: PropTypes.number,
+  price: PropTypes.string,
 };

@@ -42,14 +42,14 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
         newProduct.description = description;
 
         await axios.post(
-          "https://brand-shop-server-one.vercel.app/api/products",
+          "https://brand-shop-server-masud-rana44.vercel.app/api/products",
           newProduct
         );
 
         toast.success("Product successfully added");
       } else {
         await axios.patch(
-          `https://brand-shop-server-one.vercel.app/api/products/${params.productId}`,
+          `https://brand-shop-server-masud-rana44.vercel.app/api/products/${params.productId}`,
           newProduct
         );
 
@@ -135,8 +135,8 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
         <FormRow label="Product rating">
           <input
             type="number"
+            step="any"
             name="rating"
-            step="0.1"
             defaultValue={product.rating}
             min={1}
             max={5}

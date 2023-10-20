@@ -57,7 +57,7 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex min-h-full w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex text-slate-800 dark:text-gray-100 min-h-full w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <h2 className="text-center text-2xl font-bold leading-9 tracking-tight ">
         Login to your account
       </h2>

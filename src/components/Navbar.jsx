@@ -50,7 +50,7 @@ export const Navbar = () => {
   );
 
   return (
-    <nav className="fixed w-full h-[80px] bg-white text-slate-600 dark:bg-slate-800 dark:text-white px-4 md:px-0 flex items-center z-50">
+    <nav className="fixed w-full h-[80px] bg-gray-100 text-slate-600 dark:bg-slate-700 dark:text-white px-4 md:px-0 flex items-center z-50">
       {/* left side */}
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex space-x-2 items-center">

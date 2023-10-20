@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         element: <BrandDetails />,
         loader: async ({ params }) =>
           await axios.get(
-            `https://brand-shop-server-one.vercel.app/api/brands/${params.brandName}/products`
+            `https://brand-shop-server-masud-rana44.vercel.app/api/brands/${params.brandName}/products`
           ),
       },
       {
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         ),
         loader: async ({ params }) =>
           await axios.get(
-            `https://brand-shop-server-one.vercel.app/api/products/${params.productId}`
+            `https://brand-shop-server-masud-rana44.vercel.app/api/products/${params.productId}`
           ),
       },
       {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         ),
         loader: async ({ params }) =>
           await axios.get(
-            `https://brand-shop-server-one.vercel.app/api/products/${params.productId}`
+            `https://brand-shop-server-masud-rana44.vercel.app/api/products/${params.productId}`
           ),
       },
       {

@@ -11,7 +11,7 @@ const BrandProvider = ({ children }) => {
   useEffect(() => {
     const fetchBrands = async () => {
       const { data } = await axios.get(
-        "https://brand-shop-server-one.vercel.app/api/brands"
+        "https://brand-shop-server-masud-rana44.vercel.app/api/brands"
       );
       setBrands(data.data);
       setIsLoading(false);

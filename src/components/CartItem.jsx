@@ -2,17 +2,17 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const CartItem = ({ item }) => {
+export const CartItem = ({ item, setItems }) => {
   if (!item?._id) return null;
 
   const onDelete = async () => {
     try {
       await axios.delete(
-        `https://brand-shop-server-one.vercel.app/api/carts/${item._id}`
+        `https://brand-shop-server-masud-rana44.vercel.app/api/carts/${item._id}`
       );
 
       toast.success("Product successfully deleted");
-      window.location.reload();
+      setItems((items) => items.filter((i) => i._id !== item._id));
     } catch (error) {
       console.log(error);
       toast.error(
@@ -44,4 +44,5 @@ export const CartItem = ({ item }) => {
 
 CartItem.propTypes = {
   item: PropTypes.array,
+  setItems: PropTypes.func,
 };
