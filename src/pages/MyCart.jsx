@@ -16,18 +16,24 @@ const MyCart = () => {
     const fetchItems = async () => {
       setIsLoading(true);
 
-      axios.get(`http://localhost:8080/api/carts/${user.uid}`).then((res) => {
-        const items = res?.data?.data;
-        const ids = items.map((item) => item.productId);
-        setItems([]);
-        if (!items.length) setIsLoading(false);
-        for (const id of ids) {
-          axios.get(`http://localhost:8080/api/products/${id}`).then((res) => {
-            setItems((items) => [...items, res?.data?.data]);
-            setIsLoading(false);
-          });
-        }
-      });
+      axios
+        .get(`https://brand-shop-server-one.vercel.app/api/carts/${user.uid}`)
+        .then((res) => {
+          const items = res?.data?.data;
+          const ids = items.map((item) => item.productId);
+          setItems([]);
+          if (!items.length) setIsLoading(false);
+          for (const id of ids) {
+            axios
+              .get(
+                `https://brand-shop-server-one.vercel.app/api/products/${id}`
+              )
+              .then((res) => {
+                setItems((items) => [...items, res?.data?.data]);
+                setIsLoading(false);
+              });
+          }
+        });
     };
 
     user && fetchItems();

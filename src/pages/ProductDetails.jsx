@@ -17,7 +17,7 @@ const ProductDetails = () => {
 
   const onClick = async () => {
     try {
-      await axios.post("http://localhost:8080/api/carts", {
+      await axios.post("https://brand-shop-server-one.vercel.app/api/carts", {
         userId: user.uid,
         productId: product._id,
       });

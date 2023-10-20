@@ -41,12 +41,15 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
 
         newProduct.description = description;
 
-        await axios.post("http://localhost:8080/api/products", newProduct);
+        await axios.post(
+          "https://brand-shop-server-one.vercel.app/api/products",
+          newProduct
+        );
 
         toast.success("Product successfully added");
       } else {
         await axios.patch(
-          `http://localhost:8080/api/products/${params.productId}`,
+          `https://brand-shop-server-one.vercel.app/api/products/${params.productId}`,
           newProduct
         );
 
