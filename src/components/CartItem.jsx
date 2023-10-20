@@ -14,7 +14,6 @@ export const CartItem = ({ item, setItems }) => {
       toast.success("Product successfully deleted");
       setItems((items) => items.filter((i) => i._id !== item._id));
     } catch (error) {
-      console.log(error);
       toast.error(
         error?.response?.data?.message ||
           error?.message ||

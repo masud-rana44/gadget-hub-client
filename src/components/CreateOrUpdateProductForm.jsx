@@ -54,11 +54,10 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
         );
 
         toast.success("Product successfully updated");
-        form.reset();
-        navigate(`/brands/${brandName}`);
       }
+      form.reset();
+      navigate(`/brands/${brandName}`);
     } catch (error) {
-      console.log(error);
       toast.error(
         error?.response?.data?.message ||
           error?.message ||
