@@ -77,7 +77,7 @@ export const Navbar = () => {
         </ul>
 
         {/* right side */}
-        <div className="flex items-center space-x-7">
+        <div className="flex items-center space-x-3 md:space-x-7">
           <DarkModeToggle />
           {user ? (
             <div className="flex items-center gap-x-2">

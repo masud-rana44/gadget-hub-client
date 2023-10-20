@@ -19,7 +19,7 @@ export const User = () => {
           <RxAvatar size={26} className="font-medium" />
         )}
       </div>
-      <p className="font-medium text-slate-800 dark:text-gray-200">
+      <p className="font-medium  text-slate-800 dark:text-gray-200">
         {user.displayName}
       </p>
     </div>
