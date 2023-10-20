@@ -8,6 +8,7 @@ import { Brands } from "../components/Brands";
 import Testimonials from "../components/Testimonials";
 import { Loader } from "../components/Loader";
 import { useBrand } from "../contexts/BrandContext";
+import FAQ from "../components/FAQ";
 
 const Home = () => {
   const { brands, isLoading } = useBrand();
@@ -17,6 +18,7 @@ const Home = () => {
       <Banner />
       {isLoading ? <Loader /> : <Brands brands={brands} />}
       <Testimonials />
+      <FAQ />
     </div>
   );
 };
