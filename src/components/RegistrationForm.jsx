@@ -139,7 +139,7 @@ function RegistrationForm() {
         <Button
           type="submit"
           disabled={isLoading}
-          className="bg-gradient-to-r from-[#66b8dd] via-[#8e7fe9] to-[#e17497]"
+          className="w-full bg-gradient-to-r from-[#66b8dd] via-[#8e7fe9] to-[#e17497]"
         >
           Register
         </Button>
@@ -156,7 +156,7 @@ function RegistrationForm() {
               onClick={handleGoogleRegistration}
               type="button"
               disabled={isLoading}
-              className="flex items-center gap-x-2 bg-[#4285f4] hover:bg-[#4285f4]/90"
+              className="w-full justify-center flex items-center gap-x-2 bg-[#4285f4] hover:bg-[#4285f4]/90"
             >
               <AiOutlineGoogle /> Google
             </Button>

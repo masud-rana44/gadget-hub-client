@@ -12,6 +12,7 @@ import BrandDetails from "../pages/BrandDetails";
 import ProductDetails from "../pages/ProductDetails";
 import ProductUpdate from "../pages/ProductUpdate";
 import { PrivateRoutes } from "../components/PrivateRoutes";
+import { PublicRoutes } from "../components/PublicRoutes";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/new",
-        element: <AddProduct />,
+        element: (
+          <PrivateRoutes>
+            <AddProduct />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/cart",
@@ -69,11 +74,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <PublicRoutes>
+            <Login />
+          </PublicRoutes>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <PublicRoutes>
+            <Register />
+          </PublicRoutes>
+        ),
       },
     ],
   },

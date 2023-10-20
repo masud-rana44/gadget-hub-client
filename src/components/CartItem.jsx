@@ -10,9 +10,14 @@ export const CartItem = ({ item }) => {
       await axios.delete(`http://localhost:8080/api/carts/${item._id}`);
 
       toast.success("Product successfully deleted");
+      window.location.reload();
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong");
+      toast.error(
+        error?.response?.data?.message ||
+          error?.message ||
+          "Something went wrong"
+      );
     }
   };
 
