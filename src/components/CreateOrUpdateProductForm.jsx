@@ -133,10 +133,15 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
             <option value="computer">Computer</option>
             <option value="laptop">Laptop</option>
             <option value="tablet">Tablet</option>
+            <option value="monitor">Monitor</option>
             <option value="headphone">Headphone</option>
             <option value="camera">Camera</option>
-            <option value="tv">TV</option>
+            <option value="television">Television</option>
             <option value="speaker">Speaker</option>
+            <option value="keyboard">Keyboard</option>
+            <option value="mouse">Mouse</option>
+            <option value="printer">Printer</option>
+            <option value="gaming console">Gaming Console</option>
           </select>
         </FormRow>
         <FormRow label="Product price">

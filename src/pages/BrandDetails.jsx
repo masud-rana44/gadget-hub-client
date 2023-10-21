@@ -22,7 +22,10 @@ const BrandDetails = () => {
       )}
 
       <div className="container  mx-auto px-4 md:px-0 mt-20">
-        <SectionHeader title={`Featured Products of ${brandName}`} />
+        <SectionHeader
+          title={`Featured Products of ${brandName}`}
+          description="Explore the Best Featured Products for You"
+        />
         <ProductCards products={products} />
       </div>
     </div>

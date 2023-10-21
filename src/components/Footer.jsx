@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 export const Footer = () => {
   return (
     <section className="py-10 bg-gray-100 text-slate-600 dark:bg-slate-700 dark:text-gray-100 sm:pt-16 lg:pt-24">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 container">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
             <Link to="/">
@@ -13,9 +13,8 @@ export const Footer = () => {
 
             <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 mt-7">
               GadgetHub is a cutting-edge technology company based in Dhaka,
-              Bangladesh. We are dedicated to bringing the latest and most
-              innovative tech products to tech enthusiasts and consumers
-              worldwide.
+              Bangladesh. We are dedicated the latest innovative tech products
+              to tech enthusiasts.
             </p>
 
             <ul className="flex items-center space-x-3 mt-9">
@@ -23,7 +22,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-indigo-700 focus:bg-indigo-700"
                 >
                   <svg
                     className="w-4 h-4"
@@ -40,7 +39,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-indigo-700 focus:bg-indigo-700"
                 >
                   <svg
                     className="w-4 h-4"
@@ -57,7 +56,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-indigo-700 focus:bg-indigo-700"
                 >
                   <svg
                     className="w-4 h-4"
@@ -76,7 +75,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-gray-100 transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-indigo-700 focus:bg-indigo-700"
                 >
                   <svg
                     className="w-4 h-4"
@@ -105,7 +104,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-indigo-600 focus:text-indigo-600"
                 >
                   {" "}
                   About{" "}
@@ -116,7 +115,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-indigo-600 focus:text-indigo-600"
                 >
                   {" "}
                   Features{" "}
@@ -127,7 +126,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-indigo-600 focus:text-indigo-600"
                 >
                   {" "}
                   Works{" "}
@@ -138,7 +137,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-indigo-600 focus:text-indigo-600"
                 >
                   {" "}
                   Career{" "}
@@ -157,7 +156,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black dark:text-gray-100 transition-all duration-200 hover:text-indigo-600 focus:text-indigo-600"
                 >
                   {" "}
                   Customer Support{" "}
@@ -214,13 +213,13 @@ export const Footer = () => {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="block w-full p-4 text-black dark:text-gray-100 placeholder-gray-500 transition-all duration-200 bg-white dark:bg-slate-600 border border-gray-200 dark:border-slate-500 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                  className="block w-full px-4 py-3 text-black dark:text-gray-100 placeholder-gray-400  transition-all duration-200 bg-white dark:bg-slate-600 border outline-none ring-0 border-gray-200 dark:border-slate-500 rounded-md focus:outline-none focus:border-gray-600 caret-indigo-600"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-gray-100 transition-all duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:bg-blue-700"
+                className="inline-flex items-center justify-center px-4 py-2 mt-3 font-semibold text-gray-100 transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700/75 focus:bg-indigo-700"
               >
                 Subscribe
               </button>

@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 
-import { TbCurrencyTaka } from "react-icons/tb";
+import { TbCurrencyDollar } from "react-icons/tb";
 
-export const FormatPrice = ({ price }) => {
+export const FormatPrice = ({ price, className }) => {
   return (
-    <div className="text-xl font-medium flex items-center ">
-      <TbCurrencyTaka />
+    <div
+      className={`text-xl text-gray-500 font-medium flex items-center -space-x-[3px] ${className}`}
+    >
+      <TbCurrencyDollar size={22} />
       <span>{price}</span>
     </div>
   );
@@ -13,4 +15,5 @@ export const FormatPrice = ({ price }) => {
 
 FormatPrice.propTypes = {
   price: PropTypes.string,
+  className: PropTypes.string,
 };

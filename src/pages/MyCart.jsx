@@ -49,16 +49,21 @@ const MyCart = () => {
 
   return (
     <>
-      <div
-        style={{ minHeight: "calc(100vh - 80px - 377px)" }}
-        className="max-w-2xl  container mx-auto px-4 md:px-0 mt-10 space-y-4"
-      >
-        {!!items.length &&
-          items.map((item) => (
+      {!!items.length && (
+        <div
+          style={{ minHeight: "calc(100vh - 80px - 377px)" }}
+          className="max-w-xl  container mx-auto px-4 md:px-0 mt-10 space-y-4"
+        >
+          {items.map((item) => (
             <CartItem key={item?._id} item={item} setItems={setItems} />
           ))}
-      </div>
-      {!items.length && <EmptyState />}
+        </div>
+      )}
+      {!items.length && (
+        <div className="mt-16">
+          <EmptyState />
+        </div>
+      )}
     </>
   );
 };

@@ -1,8 +1,9 @@
 import { StartIcon } from "./StartIcon";
+import PropTypes from "prop-types";
 
 const TestimonialCart = ({ review }) => {
   return (
-    <div className="flex flex-col overflow-hidden shadow-xl">
+    <div className="flex flex-col overflow-hidden shadow-xl rounded-md">
       <div className="flex flex-col justify-between flex-1 p-6 bg-gray-100 dark:bg-slate-700 dark:text-gray-200 text-gray-900 lg:py-8 lg:px-7">
         <div className="flex-1">
           <div className="flex items-center">
@@ -24,7 +25,7 @@ const TestimonialCart = ({ review }) => {
           <img
             className="flex-shrink-0 object-cover rounded-full w-11 h-11"
             src={review.image}
-            alt={`Image of ${name}`}
+            alt={`Image of ${review.name}`}
           />
           <div className="ml-4">
             <p className="text-base font-bold">{review.name}</p>
@@ -39,3 +40,7 @@ const TestimonialCart = ({ review }) => {
 };
 
 export default TestimonialCart;
+
+TestimonialCart.propTypes = {
+  review: PropTypes.object,
+};

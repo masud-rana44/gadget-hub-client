@@ -90,7 +90,7 @@ function RegistrationForm() {
   };
 
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-slate-800 dark:text-gray-100">
       <h2 className="text-center text-2xl font-bold leading-9 tracking-tight ">
         Create your account
       </h2>
@@ -164,7 +164,10 @@ function RegistrationForm() {
 
           <p className="text-sm text-center font-medium">
             Already have an account?{" "}
-            <Link to="/login" className="text-indigo-700 hover:underline">
+            <Link
+              to="/login"
+              className="text-indigo-700 dark:text-indigo-500 hover:underline"
+            >
               Login
             </Link>
           </p>

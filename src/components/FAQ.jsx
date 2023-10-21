@@ -34,21 +34,15 @@ const FAQ = () => {
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        {/* <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Frequently Asked Questions
-          </h2>
-          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-          </p>
-        </div> */}
-        <SectionHeader title="Frequently Asked Questions" />
-
+        <SectionHeader
+          title="Frequently Asked Questions"
+          description="Quick Solutions to Common Queries and Concerns"
+        />
         <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`transition-all duration-200  bg-gray-100 dark:bg-slate-700 dark:text-gray-200 text-gray-900 border dark:border-slate-500  ${
+              className={`transition-all duration-200  bg-gray-100 dark:bg-slate-700 dark:text-gray-200 text-gray-900 border dark:border-slate-600 rounded-lg  ${
                 index === activeIndex ? "shadow-lg" : ""
               } cursor-pointer hover:bg-gray-50`}
             >
@@ -71,9 +65,9 @@ const FAQ = () => {
                   stroke="currentColor"
                 >
                   <path
-                    // stroke-linecap="round"
-                    // stroke-linejoin="round"
-                    // stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>

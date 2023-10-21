@@ -100,7 +100,8 @@ function LoginForm() {
               onClick={handleGoogleRegistration}
               type="button"
               disabled={isLoading}
-              className="w-full flex items-center gap-x-2 bg-[#4285f4] hover:bg-[#4285f4]/90 justify-center"
+              className="w-full  rounded-md 
+        transition flex items-center gap-x-2 bg-gray-100 justify-center"
             >
               <AiOutlineGoogle /> Google
             </Button>
@@ -108,7 +109,10 @@ function LoginForm() {
 
           <p className="text-sm text-center font-medium mt-6">
             Don&apos;t have an account?{" "}
-            <Link to="/register" className="text-indigo-700 hover:underline">
+            <Link
+              to="/register"
+              className="text-indigo-700 dark:text-indigo-500 hover:underline"
+            >
               Register
             </Link>
           </p>

@@ -4,9 +4,12 @@ import { SectionHeader } from "./SectionHeader";
 
 export const Brands = ({ brands }) => {
   return (
-    <div className="container mx-auto px-4 md:px-0 mt-20 ">
-      <SectionHeader title="Featured Brands" />
-      <div className="flex items-center justify-center flex-wrap gap-6 mt-8">
+    <div className="container mx-auto px-4 md:px-0 py-12  sm:py-16 lg:py-20 ">
+      <SectionHeader
+        title="Featured Brands"
+        description="Discover Your Favorite Brand Collections at GadgetHub"
+      />
+      <div className="flex items-center justify-center flex-wrap gap-6 mt-10 md:mt-16">
         {brands.map((brand) => (
           <Link
             to={`/brands/${brand.brandName}`}
