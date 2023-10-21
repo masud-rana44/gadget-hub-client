@@ -28,7 +28,7 @@ GadgetHub is a web platform dedicated to providing a seamless shopping experienc
 
 ## 🚀 Live Link
 
-[https://brand-shop-3f426.web.app/](https://brand-shop-3f426.web.app/)
+[https://gadget-hub-masud.netlify.app/](https://gadget-hub-masud.netlify.app/)
 
 ## 🎮 Demo Account
 
