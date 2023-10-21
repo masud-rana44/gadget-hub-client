@@ -5,10 +5,12 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { Button } from "./ui/Button";
 import { FormRow } from "./ui/FormRow";
+import { useState } from "react";
 
 export const CreateOrUpdateProductForm = ({ product = {} }) => {
   const params = useParams();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -18,15 +20,25 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
     const imageUrl = form.imageUrl.value;
     const name = form.name.value;
     const brandName = form.brandName.value;
+    const description = form.description.value;
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
 
-    if (!imageUrl || !name || !brandName || !type || !price || !rating)
-      return toast.error("Required field missing");
+    if (
+      !imageUrl ||
+      !name ||
+      !brandName ||
+      !type ||
+      !price ||
+      !rating ||
+      !description
+    )
+      return toast.error("Please fill in all the fields");
 
     const newProduct = {
       name,
+      description,
       imageUrl,
       brandName,
       type,
@@ -35,12 +47,9 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
     };
 
     try {
+      setIsLoading(true);
+
       if (!product?._id) {
-        const description = form.description.value;
-        if (!description) return toast.error("Required field missing");
-
-        newProduct.description = description;
-
         await axios.post(
           "https://brand-shop-server-masud-rana44.vercel.app/api/products",
           newProduct
@@ -55,14 +64,17 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
 
         toast.success("Product successfully updated");
       }
+
       form.reset();
       navigate(`/brands/${brandName}`);
     } catch (error) {
       toast.error(
         error?.response?.data?.message ||
           error?.message ||
-          "Something went wrong"
+          "An error occurred. Please try again later"
       );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,6 +89,7 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
             type="text"
             name="imageUrl"
             defaultValue={product.image}
+            disabled={isLoading}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           />
         </FormRow>
@@ -85,6 +98,18 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
             type="text"
             name="name"
             defaultValue={product.name}
+            disabled={isLoading}
+            className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
+          />
+        </FormRow>
+        <FormRow label="Product description">
+          <textarea
+            type="text"
+            step="0.1"
+            name="description"
+            defaultValue={product.description}
+            disabled={isLoading}
+            rows={3}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           />
         </FormRow>
@@ -93,6 +118,7 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
             type="text"
             name="brandName"
             defaultValue={product.brandName}
+            disabled={isLoading}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           />
         </FormRow>
@@ -100,6 +126,7 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
           <select
             name="type"
             defaultValue={product.type}
+            disabled={isLoading}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           >
             <option value="phone">Phone</option>
@@ -118,32 +145,28 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
             step="any"
             name="price"
             defaultValue={product.price}
+            disabled={isLoading}
             min={1}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           />
         </FormRow>
 
-        <FormRow label="Product description">
-          <textarea
-            type="text"
-            step="0.1"
-            name="description"
-            className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
-          />
-        </FormRow>
         <FormRow label="Product rating">
           <input
             type="number"
             step="any"
             name="rating"
             defaultValue={product.rating}
+            disabled={isLoading}
             min={1}
             max={5}
             className="border border-gray-400 dark:border-slate-500  dark:bg-slate-700 bg-white rounded-md px-3 py-2 shadow-sm"
           />
         </FormRow>
         <div className="w-full">
-          <Button>{product?._id ? "Update Product" : "Add Product"}</Button>
+          <Button disabled={isLoading}>
+            {product?._id ? "Update Product" : "Add Product"}
+          </Button>
         </div>
       </form>
     </div>

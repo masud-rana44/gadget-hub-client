@@ -17,10 +17,12 @@ const BrandDetails = () => {
 
   return (
     <div>
-      <BrandDetailsBanner advertisements={brand[0].advertishments} />
+      {!!brand.length && (
+        <BrandDetailsBanner advertisements={brand[0]?.advertishments} />
+      )}
 
       <div className="container  mx-auto px-4 md:px-0 mt-20">
-        <SectionHeader title={`Featured Products of ${brand[0].brandName}`} />
+        <SectionHeader title={`Featured Products of ${brandName}`} />
         <ProductCards products={products} />
       </div>
     </div>

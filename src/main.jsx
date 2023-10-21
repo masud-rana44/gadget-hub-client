@@ -10,14 +10,14 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <DarkModeProvider>
-    <AuthProvider>
-      <BrandProvider>
-        <Toaster />
-        <RouterProvider router={router} />
-      </BrandProvider>
-    </AuthProvider>
-  </DarkModeProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <DarkModeProvider>
+      <AuthProvider>
+        <BrandProvider>
+          <Toaster />
+          <RouterProvider router={router} />
+        </BrandProvider>
+      </AuthProvider>
+    </DarkModeProvider>
+  </React.StrictMode>
 );

@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/:brandName/products/:productId",
+        path: "/products/:productId",
         element: (
           <PrivateRoutes>
             <ProductDetails />
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/:brandName/products/:productId/update",
+        path: "/products/:productId/update",
         element: (
           <PrivateRoutes>
             <ProductUpdate />

@@ -1,8 +1,3 @@
-// import PropTypes from 'prop-types';
-// MyComponent.propTypes = {
-//   myProp: PropTypes.bool
-// };
-
 import { Banner } from "../components/Banner";
 import { Brands } from "../components/Brands";
 import Testimonials from "../components/Testimonials";
