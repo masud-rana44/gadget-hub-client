@@ -1,12 +1,19 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y } from "swiper/modules";
 import PropTypes from "prop-types";
 
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 
 export const BrandDetailsBanner = ({ advertisements }) => {
   return (
-    <Swiper spaceBetween={50} slidesPerView={1}>
+    <Swiper
+      modules={[Navigation, Pagination, A11y]}
+      pagination={{ clickable: true }}
+      spaceBetween={50}
+      slidesPerView={1}
+    >
       {advertisements?.map((adv, idx) => (
         <SwiperSlide key={idx}>
           <div className="relative w-full h-[300px] md:h-[500px]">
@@ -26,6 +33,12 @@ export const BrandDetailsBanner = ({ advertisements }) => {
           </div>
         </SwiperSlide>
       ))}
+      <div className="swiper-pagination"></div>
+
+      <div className="swiper-button-prev"></div>
+      <div className="swiper-button-next"></div>
+
+      <div className="swiper-scrollbar"></div>
     </Swiper>
   );
 };
