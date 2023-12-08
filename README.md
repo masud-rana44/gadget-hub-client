@@ -1,8 +1,8 @@
-<h1 align="center">GadgetHub With React, Node.js, MongoDB, Firebase</h1>
+<h1 align="center">GadgetHub &mdash; Discover the Latest Gadgets</h1>
 
 <p align="center"><img src="./src/assets/screenshot.PNG" alt="GadgetHub campaign homepage"></p>
 
-<p>This is a repository for GadgetHub an Tech related ecommerce platform with React, React Router Dom, Node.js, MongoDB and Firebase.</p>
+<p>This is the client site repository for GadgetHub a tech-related e-commerce platform with React, React Router Dom, Node.js, MongoDB, and Firebase.</p>
 
 ## 📚 About GadgetHub
 
@@ -32,10 +32,22 @@ GadgetHub is a web platform dedicated to providing a seamless shopping experienc
 
 ## 🎮 Demo Account
 
-You can access using the following demo account:
+Fell free to access using the following demo account:
 
-- **Email**: test@test.com
-- **Password**: @Test1234
+- **Email**: user@gadgethub.com
+- **Password**: #Test1234
+
+## 💻 Technology Used
+
+- React
+- React Router
+- Node.js
+- Express.js
+- MongoDB
+- Firebase
+- Swiper.js
+- Axios
+- React Hot Toast
 
 <h3>💖Like my work?</h3>
 
