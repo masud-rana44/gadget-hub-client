@@ -26,9 +26,10 @@ GadgetHub is a web platform dedicated to providing a seamless shopping experienc
 - <b>Responsive mobile navbar: </b> Access the website easily on your mobile device with a user-friendly navigation menu.
 - <b>User friendly react toast message: </b> Get user friendly notifications for important actions.
 
-## 🚀 Live Link
+## 🚀 Important Links
 
-[https://gadget-hub-masud.netlify.app/](https://gadget-hub-masud.netlify.app/)
+Live Website Link: [https://gadget-hub-masud.netlify.app](https://gadget-hub-masud.netlify.app/) <br/>
+Server Site Repo Link: [https://github.com/masud-rana44/gadget-hub-server](https://github.com/masud-rana44/gadget-hub-server)
 
 ## 🎮 Demo Account
 
