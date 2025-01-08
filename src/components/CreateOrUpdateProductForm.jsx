@@ -51,14 +51,14 @@ export const CreateOrUpdateProductForm = ({ product = {} }) => {
 
       if (!product?._id) {
         await axios.post(
-          "https://brand-shop-server-masud-rana44.vercel.app/api/products",
+          "https://brand-shop-server-one.vercel.app/api/products",
           newProduct
         );
 
         toast.success("Product successfully added");
       } else {
         await axios.patch(
-          `https://brand-shop-server-masud-rana44.vercel.app/api/products/${params.productId}`,
+          `https://brand-shop-server-one.vercel.app/api/products/${params.productId}`,
           newProduct
         );
 

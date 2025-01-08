@@ -19,13 +19,10 @@ const ProductDetails = () => {
 
   const onClick = async () => {
     try {
-      await axios.post(
-        "https://brand-shop-server-masud-rana44.vercel.app/api/carts",
-        {
-          userId: user.uid,
-          productId: product._id,
-        }
-      );
+      await axios.post("https://brand-shop-server-one.vercel.app/api/carts", {
+        userId: user.uid,
+        productId: product._id,
+      });
 
       toast.success("Product added to the cart");
     } catch (error) {

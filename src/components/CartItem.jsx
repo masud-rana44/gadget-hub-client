@@ -9,7 +9,7 @@ export const CartItem = ({ item, setItems }) => {
   const onDelete = async () => {
     try {
       await axios.delete(
-        `https://brand-shop-server-masud-rana44.vercel.app/api/carts/${item._id}`
+        `https://brand-shop-server-one.vercel.app/api/carts/${item._id}`
       );
 
       toast.success("Product removed from cart");

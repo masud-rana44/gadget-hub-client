@@ -17,9 +17,7 @@ const MyCart = () => {
       setIsLoading(true);
 
       axios
-        .get(
-          `https://brand-shop-server-masud-rana44.vercel.app/api/carts/${user.uid}`
-        )
+        .get(`https://brand-shop-server-one.vercel.app/api/carts/${user.uid}`)
         .then((res) => {
           const items = res?.data?.data;
           const ids = items.map((item) => item.productId);
@@ -28,7 +26,7 @@ const MyCart = () => {
           for (const id of ids) {
             axios
               .get(
-                `https://brand-shop-server-masud-rana44.vercel.app/api/products/${id}`
+                `https://brand-shop-server-one.vercel.app/api/products/${id}`
               )
               .then((res) => {
                 setItems((items) => [...items, res?.data?.data]);
